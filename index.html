@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maak een pagina</title>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <main>
+        <div id="form">
+            <h1>Maak een pagina</h1>
+            <p>Vul dit formulier in en krijg een pagina op basis van jouw voorkeuren.</p>
+
+            <label for="name">Wat is jouw naam?</label>
+            <input type="text" name="name" id="name" placeholder="Vul jouw voornaam in" required>
+
+            <label for="age">Hoe oud ben je?</label>
+            <input type="number" name="age" id="age" min="0" max="100" step="1" placeholder="14" required>
+
+            <label for="length">Hoe groot ben je in cm?</label>
+            <input type="number" name="length" id="length" min="50" max="220" step="1" placeholder="140" required>
+
+            <label for="weight">Hoeveel weeg je in kg?</label>
+            <input type="number" name="weight" id="weight"min="3" max="220" step="1" placeholder="50" required>
+
+            <label for="joke">Wat is de grappigste mop die je kent?</label>
+            <textarea name="joke" id="joke" cols="30" rows="10" placeholder="Een vriend van mij doet de administratie voor een jeanswinkel. &#10;&#10;Hij doet daar de broekhouding." required></textarea>
+
+            <label>Welke kleur spreekt jou het meeste aan?</label>
+            <div class="colours">
+                <div class="colour purple">Purple</div>
+                <div class="colour green">Green</div>
+                <div class="colour red">Red</div>
+                <div class="colour blue">Blue</div>
+                <div class="colour orange">Orange</div>
+                <div class="colour yellow">Yellow</div>
+                <div class="colour pink">Pink</div>
+                <div class="colour denim">Denim</div>
+            </div>
+
+            <label>Wat is jouw favoriete sport uit deze lijst?</label>
+            <div class="sports">
+                <div class="sport horse">Paardensport</div>
+                <div class="sport motor">Motorsport</div>
+                <div class="sport football">Voetbal</div>
+                <div class="sport hockey">Hockey</div>
+                <div class="sport athletics">Atletiek</div>
+                <div class="sport gymnastics">Gymnastiek</div>
+                <div class="sport swimming">Zwemmen</div>
+                <div class="sport e-sports">E-sports</div>
+            </div>
+
+            <label>Welk dier uit deze lijst vind je het leukst?</label>
+            <div class="animals">
+                <div class="animal lion">Leeuw</div>
+                <div class="animal penguin">Pinguïn</div>
+                <div class="animal hippo">Nijlpaard</div>
+                <div class="animal wolf">Wolf</div>
+                <div class="animal whale">Walvis</div>
+                <div class="animal polar">Ijsbeer</div>
+                <div class="animal rhino">Neushoorn</div>
+                <div class="animal panther">Panther</div>
+            </div>
+
+            <label for="superpowers">Welke van deze superkrachten zou je graag bezitten?</label>
+            <select name="superpowers" id="superpowers" required>
+                <option value="vliegen">Vliegen</option>
+                <option value="supersterk">Supersterk</option>
+                <option value="supersnel">Supersnel</option>
+                <option value="tijdreizen">Tijdreizen</option>
+                <option value="onzichtbaar">Onzichtbaar zijn</option>
+                <option value="onsterfelijk">Onsterfelijk</option>
+                <option value="shapeshifting">Shapeshifting (andere vormen aannemen</option>
+                <option value="mindreading">Gedachten lezen</option>
+            </select>
+
+            <label>Kies een avatar</label>
+            <img src="https://source.unsplash.com/random/60x60" alt="">
+
+            <button id="submit">MAAK EEN PAGINA VOOR MIJ</button>
+        </div>
+    </main>
+    
+</body>
+</html>
