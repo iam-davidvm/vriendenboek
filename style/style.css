@@ -70,6 +70,7 @@ input[type="number"] {
 #avatars {
     border-radius: 50%;
     display: block;
+    margin-bottom: 25px;
 }
 
 .colours, .sports, .animals {
@@ -80,6 +81,7 @@ input[type="number"] {
     gap: 15px 15px;
     justify-items: stretch;
     justify-content: stretch;
+    margin-bottom: 35px;
 }
 
 .colour, .sport, .animal {
@@ -131,19 +133,23 @@ h1#title {
     font-family: var(--ff-headings);
     font-weight: 700;
     font-size: var(--fs-large);
+    margin-bottom: 15px;
 }
 
 p#intro {
     font-family: var(--ff-body);
     font-size: var(--fs-small);
+    margin-bottom: 25px;
 }
 
 label {
     font-family: var(--ff-headings);
     font-size: var(--fs-medium);
+    margin-bottom: 10px;
 }
 
 input, textarea, select, option {
     font-family: var(--ff-body);
     font-size: var(--fs-small);
+    margin-bottom: 25px;
 }
