@@ -15,76 +15,103 @@
     <main>
         <div id="form">
             <!-- Misschien beter een echt form gebruiken? -->
-            <h1 id="title">Maak een pagina</h1>
-            <p id="intro">Vul dit formulier in en krijg een pagina op basis van jouw voorkeuren.</p>
+            <form action="">
+                <h1 id="title">Maak een pagina</h1>
+                <p id="intro">Vul dit formulier in en krijg een pagina op basis van jouw voorkeuren.</p>
 
-            <label for="name">Wat is jouw naam?</label>
-            <input type="text" name="name" id="name" placeholder="Vul jouw voornaam in" required>
+                <label for="name">Wat is jouw naam?</label>
+                <input type="text" name="name" id="name" placeholder="Vul jouw voornaam in" required>
 
-            <label for="age">Hoe oud ben je?</label>
-            <input type="number" name="age" id="age" min="0" max="100" step="1" placeholder="14" required>
+                <label for="age">Hoe oud ben je?</label>
+                <input type="number" name="age" id="age" min="0" max="100" step="1" placeholder="14" required>
 
-            <label for="length">Hoe groot ben je in cm?</label>
-            <input type="number" name="length" id="length" min="50" max="220" step="1" placeholder="140" required>
+                <label for="length">Hoe groot ben je in cm?</label>
+                <input type="number" name="length" id="length" min="50" max="220" step="1" placeholder="140" required>
 
-            <label for="weight">Hoeveel weeg je in kg?</label>
-            <input type="number" name="weight" id="weight"min="3" max="220" step="1" placeholder="50" required>
+                <label for="weight">Hoeveel weeg je in kg?</label>
+                <input type="number" name="weight" id="weight"min="3" max="220" step="1" placeholder="50" required>
 
-            <label for="joke">Wat is de grappigste mop die je kent?</label>
-            <textarea name="joke" id="joke" cols="30" rows="10" placeholder="Een vriend van mij doet de administratie voor een jeanswinkel. &#10;&#10;Hij doet daar de broekhouding." required></textarea>
+                <label for="joke">Wat is de grappigste mop die je kent?</label>
+                <textarea name="joke" id="joke" cols="30" rows="10" placeholder="Een vriend van mij doet de administratie voor een jeanswinkel. &#10;&#10;Hij doet daar de broekhouding." required></textarea>
 
-            <label>Welke kleur spreekt jou het meeste aan?</label>
-            <div class="colours">
-                <div class="colour purple"></div>
-                <div class="colour green"></div>
-                <div class="colour red"></div>
-                <div class="colour blue"></div>
-                <div class="colour orange"></div>
-                <div class="colour yellow"></div>
-                <div class="colour pink"></div>
-                <div class="colour denim"></div>
-            </div>
+                <label>Welke kleur spreekt jou het meeste aan?</label>
+                <div class="colours">
+                    <div class="colour purple"></div>
+                    <div class="colour green"></div>
+                    <div class="colour red"></div>
+                    <div class="colour blue"></div>
+                    <div class="colour orange"></div>
+                    <div class="colour yellow"></div>
+                    <div class="colour pink"></div>
+                    <div class="colour denim"></div>
+                </div>
 
-            <label>Wat is jouw favoriete sport uit deze lijst?</label>
-            <div class="sports">
-                <div class="sport horse"><img src="../../DESIGN/vriendenboek/images/sports/horse_og.jpg" alt="paardensport"></div>
-                <div class="sport motor"><img src="../../DESIGN/vriendenboek/images/sports/motor_og.jpg" alt="motorsport"></div>
-                <div class="sport football"><img src="../../DESIGN/vriendenboek/images/sports/football_og.jpg" alt="voetbal"></div>
-                <div class="sport hockey"><img src="../../DESIGN/vriendenboek/images/sports/hockey_og.jpg" alt="hockey"></div>
-                <div class="sport athletics"><img src="../../DESIGN/vriendenboek/images/sports/athletics_og.jpg" alt="atletiek"></div>
-                <div class="sport gymnastics"><img src="../../DESIGN/vriendenboek/images/sports/gymnastics_og.jpg" alt="gymnastiek"></div>
-                <div class="sport swimming"><img src="../../DESIGN/vriendenboek/images/sports/swimming_og.jpg" alt="zwemmen"></div>
-                <div class="sport e-sports"><img src="../../DESIGN/vriendenboek/images/sports/esports_og.jpg" alt="e-sports"></div>
-            </div>
+                <label>Wat is jouw favoriete sport uit deze lijst?</label>
+                <div class="sports">
+                    <div class="sport horse"><img src="../../DESIGN/vriendenboek/images/sports/horse_og.jpg" alt="paardensport"></div>
+                    <div class="sport motor"><img src="../../DESIGN/vriendenboek/images/sports/motor_og.jpg" alt="motorsport"></div>
+                    <div class="sport football"><img src="../../DESIGN/vriendenboek/images/sports/football_og.jpg" alt="voetbal"></div>
+                    <div class="sport hockey"><img src="../../DESIGN/vriendenboek/images/sports/hockey_og.jpg" alt="hockey"></div>
+                    <div class="sport athletics"><img src="../../DESIGN/vriendenboek/images/sports/athletics_og.jpg" alt="atletiek"></div>
+                    <div class="sport gymnastics"><img src="../../DESIGN/vriendenboek/images/sports/gymnastics_og.jpg" alt="gymnastiek"></div>
+                    <div class="sport swimming"><img src="../../DESIGN/vriendenboek/images/sports/swimming_og.jpg" alt="zwemmen"></div>
+                    <div class="sport e-sports"><img src="../../DESIGN/vriendenboek/images/sports/esports_og.jpg" alt="e-sports"></div>
+                </div>
 
-            <label>Welk dier uit deze lijst vind je het leukst?</label>
-            <div class="animals">
-                <div class="animal lion"><img src="../../DESIGN/vriendenboek/images/animals/lion_og.jpg" alt="leeuw"></div>
-                <div class="animal penguin"><img src="../../DESIGN/vriendenboek/images/animals/penguin_og.jpg" alt="pinguïn"></div>
-                <div class="animal hippo"><img src="../../DESIGN/vriendenboek/images/animals/hippo_og.jpg" alt="nijlpaard"></div>
-                <div class="animal wolf"><img src="../../DESIGN/vriendenboek/images/animals/wolf_og.jpg" alt="wolf"></div>
-                <div class="animal whale"><img src="../../DESIGN/vriendenboek/images/animals/whale_og.jpg" alt="walvis"></div>
-                <div class="animal polar"><img src="../../DESIGN/vriendenboek/images/animals/polar_og.jpg" alt="ijsbeer"></div>
-                <div class="animal rhino"><img src="../../DESIGN/vriendenboek/images/animals/rhino_og.jpg" alt="neushoorn"></div>
-                <div class="animal owl"><img src="../../DESIGN/vriendenboek/images/animals/owl_og.jpg" alt="uil"></div>
-            </div>
+                <label>Welk dier uit deze lijst vind je het leukst?</label>
+                <div class="animals">
+                    <div class="animal lion"><img src="../../DESIGN/vriendenboek/images/animals/lion_og.jpg" alt="leeuw"></div>
+                    <div class="animal penguin"><img src="../../DESIGN/vriendenboek/images/animals/penguin_og.jpg" alt="pinguïn"></div>
+                    <div class="animal hippo"><img src="../../DESIGN/vriendenboek/images/animals/hippo_og.jpg" alt="nijlpaard"></div>
+                    <div class="animal wolf"><img src="../../DESIGN/vriendenboek/images/animals/wolf_og.jpg" alt="wolf"></div>
+                    <div class="animal whale"><img src="../../DESIGN/vriendenboek/images/animals/whale_og.jpg" alt="walvis"></div>
+                    <div class="animal polar"><img src="../../DESIGN/vriendenboek/images/animals/polar_og.jpg" alt="ijsbeer"></div>
+                    <div class="animal rhino"><img src="../../DESIGN/vriendenboek/images/animals/rhino_og.jpg" alt="neushoorn"></div>
+                    <div class="animal owl"><img src="../../DESIGN/vriendenboek/images/animals/owl_og.jpg" alt="uil"></div>
+                </div>
 
-            <label for="superpowers">Welke van deze superkrachten zou je graag bezitten?</label>
-            <select name="superpowers" id="superpowers" required>
-                <option value="vliegen">Vliegen</option>
-                <option value="supersterk">Supersterk</option>
-                <option value="supersnel">Supersnel</option>
-                <option value="tijdreizen">Tijdreizen</option>
-                <option value="onzichtbaar">Onzichtbaar zijn</option>
-                <option value="onsterfelijk">Onsterfelijk</option>
-                <option value="shapeshifting">Shapeshifting (andere vormen aannemen</option>
-                <option value="mindreading">Gedachten lezen</option>
-            </select>
+                <label for="superpowers">Welke van deze superkrachten zou je graag bezitten?</label>
+                <select name="superpowers" id="superpowers" required>
+                    <option value="vliegen">Vliegen</option>
+                    <option value="supersterk">Supersterk</option>
+                    <option value="supersnel">Supersnel</option>
+                    <option value="tijdreizen">Tijdreizen</option>
+                    <option value="onzichtbaar">Onzichtbaar zijn</option>
+                    <option value="onsterfelijk">Onsterfelijk</option>
+                    <option value="shapeshifting">Shapeshifting (andere vormen aannemen</option>
+                    <option value="mindreading">Gedachten lezen</option>
+                </select>
 
-            <label>Kies een avatar</label>
-            <img id="avatars" src="https://source.unsplash.com/random/60x60" alt="">
+                <label>Kies een avatar</label>
+                <img id="avatars" src="images/user.svg" alt="">
 
-            <button id="submit">MAAK EEN PAGINA VOOR MIJ</button>
+                <button id="submit">MAAK EEN PAGINA VOOR MIJ</button>
+
+                <!-- <div id="lightbox" class="overlay">
+                    
+                <span class="close pointer">&times;</span>
+                    <div class="avatarbox">
+                        
+                        <div><img src="../../DESIGN/vriendenboek/assets/818087-avatars/svg/001-bear.svg" alt=""></div>
+                        <div><img src="../../DESIGN/vriendenboek/assets/818087-avatars/svg/001-bear.svg" alt=""></div>
+                        <div><img src="../../DESIGN/vriendenboek/assets/818087-avatars/svg/001-bear.svg" alt=""></div>
+                        <div><img src="../../DESIGN/vriendenboek/assets/818087-avatars/svg/001-bear.svg" alt=""></div>
+                        <div><img src="../../DESIGN/vriendenboek/assets/818087-avatars/svg/001-bear.svg" alt=""></div>
+                        <div><img src="../../DESIGN/vriendenboek/assets/818087-avatars/svg/001-bear.svg" alt=""></div>
+                        <div><img src="../../DESIGN/vriendenboek/assets/818087-avatars/svg/001-bear.svg" alt=""></div>
+                        <div><img src="../../DESIGN/vriendenboek/assets/818087-avatars/svg/001-bear.svg" alt=""></div>
+                        <div><img src="../../DESIGN/vriendenboek/assets/818087-avatars/svg/001-bear.svg" alt=""></div>
+                        <div><img src="../../DESIGN/vriendenboek/assets/818087-avatars/svg/001-bear.svg" alt=""></div>
+                        <div><img src="../../DESIGN/vriendenboek/assets/818087-avatars/svg/001-bear.svg" alt=""></div>
+                        <div><img src="../../DESIGN/vriendenboek/assets/818087-avatars/svg/001-bear.svg" alt=""></div>
+                        <div><img src="../../DESIGN/vriendenboek/assets/818087-avatars/svg/001-bear.svg" alt=""></div>
+                        <div><img src="../../DESIGN/vriendenboek/assets/818087-avatars/svg/001-bear.svg" alt=""></div>
+                        <div><img src="../../DESIGN/vriendenboek/assets/818087-avatars/svg/001-bear.svg" alt=""></div>
+                        
+                    </div>
+
+                </div> -->
+            </form>
         </div>
     </main>
     
