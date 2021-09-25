@@ -6,14 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maak een pagina</title>
     <link rel="stylesheet" href="style/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Signika:wght@300;400;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     <main>
         <div id="form">
             <!-- Misschien beter een echt form gebruiken? -->
-            <h1>Maak een pagina</h1>
-            <p>Vul dit formulier in en krijg een pagina op basis van jouw voorkeuren.</p>
+            <h1 id="title">Maak een pagina</h1>
+            <p id="intro">Vul dit formulier in en krijg een pagina op basis van jouw voorkeuren.</p>
 
             <label for="name">Wat is jouw naam?</label>
             <input type="text" name="name" id="name" placeholder="Vul jouw voornaam in" required>
