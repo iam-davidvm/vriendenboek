@@ -8,6 +8,12 @@ let colourClicked = false;
 let avatarClicked = false;
 let lightbox = document.querySelector('#lightbox');
 let avatarBtn = document.querySelector('#avatars');
+let nameInput = document.querySelector('#name');
+let ageInput = document.querySelector('#age');
+let lengthInput = document.querySelector('#length');
+let weightInput = document.querySelector('#weight');
+let jokeInput = document.querySelector('#joke');
+let superpowersInput = document.querySelector('#superpowers');
 
 // remove classlist img-clicked
 const removeClassElement = item => {
@@ -34,7 +40,7 @@ const checkClicked = () => {
 
 // what happens
 const clickAction = e => {
-    console.log(e.target);
+    // console.log(e.target.tagName);
 
     // execute if it's an image with an alt
     if (e.target.alt !== undefined && e.target.alt !== '') {
@@ -50,6 +56,7 @@ const clickAction = e => {
             animalsClicked = true;
         }
         checkClicked();
+        return;
     }
 
     // execute when a colour is picked
@@ -60,17 +67,20 @@ const clickAction = e => {
         profile[item] = e.target.classList[1];
         colourClicked = true;
         checkClicked();
+        return;
 
     }
 
     // if the target is the avatar
     if (e.target.id === 'avatars') {
         toggleLightBox();
+        return;
     }
 
     // if the close button is pressed
     if (e.target.classList[0] === 'close') {
         toggleLightBox();
+        return;
     }
 
     // if an avatar is chosen
@@ -81,6 +91,25 @@ const clickAction = e => {
         avatars.src = e.target.src;
         avatars.id = 'noradius';
         toggleLightBox();
+        return;
+    }
+
+    // check if the focusout is one of following tags input, textarea, select
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') {
+        console.log(e.target.value);
+        return;
+    }
+
+    // if there is a button click
+    if (e.target.id === 'submit') {
+        e.preventDefault();
+        profile.name = nameInput.value;
+        profile.age = ageInput.value;
+        profile.length = lengthInput.value;
+        profile.weight = weightInput.value;
+        profile.superpower = superpowersInput.value;
+        profile.joke = jokeInput.value;
+        return;
     }
 
     
@@ -88,3 +117,4 @@ const clickAction = e => {
 
 // create global eventlistener
 document.body.addEventListener('click', clickAction);
+document.body.addEventListener('focusout', clickAction);
