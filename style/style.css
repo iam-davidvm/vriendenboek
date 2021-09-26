@@ -7,6 +7,7 @@
     --fs-small: 0.85rem;
     --clr-main: hsla(271, 44%, 75%, 1);
     --clr-support: hsla(271, 20%, 20%, 1);
+    --filter: invert(14%) sepia(18%) saturate(1034%) hue-rotate(227deg) brightness(94%) contrast(90%);
 }
 
 html, body {
@@ -45,6 +46,7 @@ input, textarea, select {
 
 
 button#submit {
+    visibility: hidden;
     width: 100%;
     height: 60px;
     border: 6px black solid;
@@ -74,6 +76,14 @@ input[type="number"] {
 
 #avatars {
     border-radius: 50%;
+    display: block;
+    margin-bottom: 25px;
+}
+
+#noradius {
+    border-radius: 0;
+    width: 60px;
+    height: auto;
     display: block;
     margin-bottom: 25px;
 }
@@ -167,8 +177,15 @@ input, textarea, select, option {
     margin-bottom: 25px;
 }
 
+.img-clicked {
+    border: 6px black solid;
+}
+
 /* overlay for avatars */
 /* lightbox lay-out */
+.hidden {
+    display: none;
+}
 /* dark overlay */
 .overlay {
     position: fixed;
@@ -269,7 +286,7 @@ header {
     width: 70%;
 }
 
-#name {
+#name-heading {
     border: 6px var(--clr-support) solid;
     box-shadow: 5px 5px hsla(0, 0%, 0%, 0.2);
     font-family: var(--ff-headings);
@@ -364,12 +381,12 @@ section {
 }
 
 .like {
-    width: 45px;
-    margin: 0 5px;
-    height: 45px;
+    width: 30px;
+    margin: 0 15px;
+    height: 30px;
     background-image: url(../images/heart.svg);
     /* https://isotropic.co/hex-color-to-css-filter/ */
-    filter: invert(14%) sepia(18%) saturate(1034%) hue-rotate(227deg) brightness(94%) contrast(90%);
+    filter: var(--filter);
     cursor: pointer;
 }
 
@@ -379,5 +396,25 @@ section {
 
 .like-clicked {
     background-image: url(../images/like.svg);
-    filter: invert(14%) sepia(18%) saturate(1034%) hue-rotate(227deg) brightness(94%) contrast(90%);
+    filter: var(--filter);
+}
+
+.like-count {
+    margin-top: 5px;
+    font-family: var(--ff-body);
+    font-weight: 700;
+    font-size: var(--fs-small);
+    color: var(--clr-support);
+}
+
+.desc {
+    margin: 10px 10px 20px;
+    font-family: var(--ff-body);
+    font-size: var(--fs-small);
+    color: var(--clr-support);
+    line-height: 1.5;
+}
+
+.desc span {
+    font-weight: 700;
 }
