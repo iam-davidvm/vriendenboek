@@ -43,17 +43,60 @@ const posts = [
         likes: Math.floor(Math.random() * 2000)
     },
     superpowers = {
-        vliegen: ['Ik wil kunnen vliegen zoals <span>Superman</span> of <span>Storm</span>! <br><span>#geenfile #verrereizen</span>','images/superpowers/superman.jpg'],
-        supersterk: ['Ik wil supersterk zijn zoals <span>Thor</span> of <span>Mr. Incredible</span>! <br><span>#autostillen #allesmeesleuren</span>','images/superpowers/thor.jpg'],
-        supersnel: ['Ik wil supersnel zijn zoals <span>Superman</span> of <span>Dash</span> uit The Incredibles! <br><span>#geenautomeernodig #wereldrecordsprint</span>','images/superpowers/dash.jpg'],
-        tijdreizen: ['Ik wil kunnen tijdreizen zoals <span>Neo</span> uit The Matrix of <span>Hiro</span> uit Heroes! <br><span>#tijdstilzetten #nooitmeertelaat</span>','images/superpowers/hiro.jpg'],
-        onzichtbaar: ['Ik wil onzichtbaar kunnen zijn zoals <span>Griffin</span> uit Hotel Transylvania of <span>Violet</span> uit The Incredibles! <br><span>#winnenbijverstoppertje</span>','images/superpowers/violet.jpg'],
-        onsterfelijk: ['Ik wil onsterfelijk kunnen zijn zoals <span>Wolverine</span> of <span>The Thing</span> uit Fantastic Four! <br><span>#geenbang #foreveryoung</span>','images/superpowers/wolverine.jpg'],
-        shapeshifting: ['Ik wil kunnen shapeshiften zoals <span>Mystique</span> uit X-Men of <span>Violet</span> uit The Incredibles! <br><span>#overalbinnen #imiteren</span>','images/superpowers/mystique.jpg'],
-        mindreading: ['Ik wil kunnen gedachten lezen zoals <span>Professor Xavier</span> uit X-Men of <span>Edward Cullen</span> uit Twilight! <br><span>#ondercontrole #dingenlatenvergeten</span>','images/superpowers/xavier.jpg'],
+        vliegen: ['Ik wil kunnen vliegen zoals <span>Superman</span> of <span>Storm</span>! <br><span>#geenfile #verrereizen</span>','images/superman.jpg'],
+        supersterk: ['Ik wil supersterk zijn zoals <span>Thor</span> of <span>Mr. Incredible</span>! <br><span>#autostillen #allesmeesleuren</span>','images/thor.jpg'],
+        supersnel: ['Ik wil supersnel zijn zoals <span>Superman</span> of <span>Dash</span> uit The Incredibles! <br><span>#geenautomeernodig #wereldrecordsprint</span>','images/dash.jpg'],
+        tijdreizen: ['Ik wil kunnen tijdreizen zoals <span>Neo</span> uit The Matrix of <span>Hiro</span> uit Heroes! <br><span>#tijdstilzetten #nooitmeertelaat</span>','images/hiro.jpg'],
+        onzichtbaar: ['Ik wil onzichtbaar kunnen zijn zoals <span>Griffin</span> uit Hotel Transylvania of <span>Violet</span> uit The Incredibles! <br><span>#winnenbijverstoppertje</span>','images/violet.jpg'],
+        onsterfelijk: ['Ik wil onsterfelijk kunnen zijn zoals <span>Wolverine</span> of <span>The Thing</span> uit Fantastic Four! <br><span>#geenbang #foreveryoung</span>','images/wolverine.jpg'],
+        shapeshifting: ['Ik wil kunnen shapeshiften zoals <span>Mystique</span> uit X-Men of <span>Violet</span> uit The Incredibles! <br><span>#overalbinnen #imiteren</span>','images/mystique.jpg'],
+        mindreading: ['Ik wil kunnen gedachten lezen zoals <span>Professor Xavier</span> uit X-Men of <span>Edward Cullen</span> uit Twilight! <br><span>#ondercontrole #dingenlatenvergeten</span>','images/xavier.jpg'],
         likes: Math.floor(Math.random() * 2000)
     }
 ];
+
+const colours = {
+    purple : {
+        main: 'hsla(271, 44%, 75%, 1)',
+        support: 'hsla(271, 20%, 20%, 1)',
+        filter: 'invert(11%) sepia(7%) saturate(3751%) hue-rotate(227deg) brightness(90%) contrast(81%)'
+    },
+    green : {
+        main: 'hsla(81, 63%, 78%, 1)',
+        support: 'hsla(81, 40%, 50%, 1)',
+        filter: 'invert(67%) sepia(15%) saturate(1369%) hue-rotate(39deg) brightness(96%) contrast(84%)'
+    },
+    red : {
+        main: 'hsla(0, 84%, 62%, 1)',
+        support: 'hsla(0, 84%, 30%, 1)',
+        filter: 'invert(14%) sepia(32%) saturate(6659%) hue-rotate(347deg) brightness(95%) contrast(108%)'
+    },
+    blue : {
+        main: 'hsla(180, 56%, 81%, 1)',
+        support: 'hsla(180, 40%, 40%, 1)',
+        filter: 'invert(65%) sepia(7%) saturate(2633%) hue-rotate(131deg) brightness(74%) contrast(89%)'
+    },
+    orange : {
+        main: 'hsla(22, 84%, 65%, 1)',
+        support: 'hsla(22, 100%, 35%, 1)',
+        filter: 'invert(28%) sepia(69%) saturate(1741%) hue-rotate(4deg) brightness(94%) contrast(104%)'
+    },
+    yellow : {
+        main: 'hsla(55, 100%, 80%, 1)',
+        support: 'hsla(55, 80%, 30%, 1)',
+        filter: 'invert(74%) sepia(70%) saturate(7071%) hue-rotate(38deg) brightness(92%) contrast(88%)'
+    },
+    pink : {
+        main: 'hsla(0, 100%, 94%, 1)',
+        support: 'hsla(0, 100%, 60%, 1)',
+        filter: 'invert(37%) sepia(44%) saturate(6506%) hue-rotate(341deg) brightness(101%) contrast(108%)'
+    },
+    denim : {
+        main: 'hsla(194, 94%, 26%, 1)',
+        support: 'hsla(194, 60%, 15%, 1)',
+        filter: 'invert(14%) sepia(55%) saturate(635%) hue-rotate(146deg) brightness(97%) contrast(93%)'
+    }
+};
 
 let sportsClicked = false;
 let animalsClicked = false;
@@ -110,18 +153,28 @@ const checkPost = i => {
 
 // build personal page
 const buildPage = () => {
-    // only execute for page.html
-    let pageURL = window.location;
-    pageURL = pageURL.toString();
-    pageURL = pageURL.slice(-9);
-    if (pageURL !== 'page.html') {
-        return;
-    }
+    // scroll to top
+    window.scrollTo(0, 0);
 
-    let profile = JSON.parse(window.localStorage.getItem('profile'));
+    // change branding
+    let root = document.querySelector(':root');
+    let mainClr = colours[profile['colour']]['main'];
+    let supportClr = colours[profile['colour']]['support'];
+    let filter = colours[profile['colour']]['filter'];
+    root.style.setProperty('--clr-main', mainClr);
+    root.style.setProperty('--clr-support', supportClr);
+    root.style.setProperty('--filter', filter);
 
-    let timeline = document.querySelector('#timeline');
+    // append id to body
+    let body = document.querySelector('body');
+    body.id = 'personal';
 
+    // clean the main and append first elements
+    let main = document.querySelector('main');
+    main.id = 'timeline';
+    main.innerText = '';
+    main.innerHTML = '<header><div id="avatar"></div><div id="name-heading"></div></header><section id="metrics"><div class="metric age"></div><div class="metric weight"></div><div class="metric height"></div></section>';
+    
     // header
     let avatar = document.querySelector('#avatar');
     let avatarImg = document.createElement('img');
@@ -134,9 +187,9 @@ const buildPage = () => {
     let age = document.querySelector('.age');
     let weight = document.querySelector('.weight');
     let height = document.querySelector('.height');
-    age.innerHTML = '<span class="metric-number">' + profile['age'] + '</span>jaar';
-    weight.innerHTML = '<span class="metric-number">' + profile['weight'] + '</span>jaar';
-    height.innerHTML = '<span class="metric-number">' + profile['height'] + '</span>jaar';
+    age.innerHTML = '<span class="metric-number" data-target="' + profile['age'] + '">' + 1 + '</span>jaar';
+    weight.innerHTML = '<span class="metric-number" data-target="' + profile['weight'] + '">' + 2 + '</span>kg';
+    height.innerHTML = '<span class="metric-number" data-target="' + profile['height'] + '">' + 3 + '</span>cm';
 
     // creating posts
     for (let i = 0; i <= 4; i++) {
@@ -146,7 +199,7 @@ const buildPage = () => {
             let posterName = document.createElement('div');
             posterName.classList.add('postername');
             let posterAvatar = document.createElement('div');
-            posterAvatar.classList.add('poster-avatar');
+            posterAvatar.classList.add('post-avatar');
             let postAvatar = document.createElement('img');
             postAvatar.src = profile['avatar'];
             posterAvatar.appendChild(postAvatar);
@@ -170,17 +223,17 @@ const buildPage = () => {
             like.classList.add('like');
             let likeCount = document.createElement('p');
             likeCount.classList.add('like-count');
-            likeCount.innerText = posts[2]['likes'];
+            likeCount.innerHTML = '<span>' + posts[2]['likes'] + '</span> likes';
             likes.appendChild(like);
-            likes.appendChild(like-count);
+            likes.appendChild(likeCount);
             section.appendChild(likes);
     
-            let desc = document.createElement(div);
+            let desc = document.createElement('div');
             desc.classList.add('desc');
-            desc.innerHTML = '<p>' + posts[2]['joke']; + '</p>';
+            desc.innerHTML = '<p>' + profile['joke'] + '</p>';
             section.appendChild(desc);
 
-            timeline.appendChild(section);
+            main.appendChild(section);
 
         } else {
             let section = document.createElement('section');
@@ -188,7 +241,7 @@ const buildPage = () => {
             let posterName = document.createElement('div');
             posterName.classList.add('postername');
             let posterAvatar = document.createElement('div');
-            posterAvatar.classList.add('poster-avatar');
+            posterAvatar.classList.add('post-avatar');
             let postAvatar = document.createElement('img');
             postAvatar.src = profile['avatar'];
             posterAvatar.appendChild(postAvatar);
@@ -203,7 +256,7 @@ const buildPage = () => {
             picture.classList.add('picture');
             let pictureImg = document.createElement('img');
             let post = checkPost(i);
-            pictureImg.src = 'images/' + posts[0][profile[post]][1] + '.jpg';
+            pictureImg.src = posts[i][profile[post]][1];
             picture.appendChild(pictureImg);
             section.appendChild(picture);
     
@@ -213,31 +266,50 @@ const buildPage = () => {
             like.classList.add('like');
             let likeCount = document.createElement('p');
             likeCount.classList.add('like-count');
-            likeCount.innerText = posts[i]['likes'];
+            likeCount.innerHTML = '<span>' + posts[i]['likes'] + '</span> likes';
             likes.appendChild(like);
-            likes.appendChild(like-count);
+            likes.appendChild(likeCount);
             section.appendChild(likes);
     
-            let desc = document.createElement(div);
+            let desc = document.createElement('div');
             desc.classList.add('desc');
-            desc.innerHTML = '<p>' + posts[0][profile[post]][1] + '</p>';
+            desc.innerHTML = '<p>' + posts[i][profile[post]][0] + '</p>';
             section.appendChild(desc);
 
-            timeline.appendChild(section);
+            main.appendChild(section);
 
         }
     }
 
-    document.title = 'Website van ' + profile['name'];
+    document.title = profile['name'] + ' is cool!';
+
+    // update metrics
+    const counters = document.querySelectorAll('.metric-number');
+    const speed = 4;
+
+    counters.forEach((counter) => {
+        const updateCount = () => {
+          const target = parseInt(counter.getAttribute('data-target'));
+          const count = parseInt(counter.innerText);
+          const increment = Math.trunc(target / speed);
+      
+          if (count < target) {
+            counter.innerText = count + increment;
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCount();
+      });
 };
 
 // what happens
 const clickAction = e => {
-    // console.log(e.target.tagName);
+    
 
     // execute if it's an image with an alt
     if (e.target.alt !== undefined && e.target.alt !== '') {
-        console.log(e.target.alt, e.target.parentNode.parentNode);
         let item = e.target.parentNode.classList[0];
         removeClassElement(item);
         e.target.parentNode.classList.add('img-clicked');
@@ -301,16 +373,24 @@ const clickAction = e => {
         e.preventDefault();
         profile.name = nameInput.value;
         profile.age = ageInput.value;
-        profile.length = lengthInput.value;
+        profile.height = lengthInput.value;
         profile.weight = weightInput.value;
-        profile.superpower = superpowersInput.value;
+        profile.superpowers = superpowersInput.value;
         profile.joke = jokeInput.value;
+        buildPage();
+    }
 
-        // werkt niet dus de pagina zal overschreven moeten worden
-        window.localStorage.setItem('profile',JSON.stringify(profile));
-        
-        // go to page
-        window.location.href = 'page.html';
+    // if post is liked
+    if (e.target.classList[0] === 'like') {
+        let likeCountSpan = e.target.parentNode.children[1].children[0];
+
+        if (e.target.classList[1] === 'like-clicked') {
+            e.target.classList.remove('like-clicked');
+            likeCountSpan.innerText = parseInt(likeCountSpan.innerText) - 1;
+        } else {
+            e.target.classList.add('like-clicked');
+            likeCountSpan.innerText = parseInt(likeCountSpan.innerText) + 1;
+        }
     }
 
     
@@ -319,5 +399,3 @@ const clickAction = e => {
 // create global eventlistener
 document.body.addEventListener('click', clickAction);
 document.body.addEventListener('focusout', clickAction);
-
-window.addEventListener('load', buildPage);
