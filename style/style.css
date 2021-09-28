@@ -75,12 +75,6 @@ input[type="number"] {
 }
 
 #avatars {
-    border-radius: 50%;
-    display: block;
-    margin-bottom: 25px;
-}
-
-#noradius {
     border-radius: 0;
     width: 60px;
     height: auto;
@@ -190,7 +184,6 @@ input, textarea, select, option {
 .overlay {
     position: fixed;
     z-index: 999;
-    padding: 10px 62px 0px 62px;
     left: 0;
     top: 0;
     width: 100%;
@@ -201,13 +194,10 @@ input, textarea, select, option {
 }
 
 .avatarbox {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40%;
+    height: 80%;
     max-width: 400px;
     max-height: 500px;
+    margin: 10px auto;
     background-color: white;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -215,6 +205,7 @@ input, textarea, select, option {
     border: 6px black solid;
     box-shadow: 5px 5px hsla(0, 0%, 0%, 0.2);
     gap: 10px;
+    overflow: scroll;
 }
 
 .avatarbox img {
@@ -363,7 +354,7 @@ section {
     color: var(--clr-support);
     font-weight: 700;
     margin: auto;
-    font-size: var(--fs-medium);
+    font-size: 1.5rem;
 }
 
 .picture {
@@ -418,4 +409,57 @@ section {
 
 .desc span {
     font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    #avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    #name-heading {
+        font-size: 4rem;
+        padding: 15% 15px;
+    }
+
+    .metric-number {
+        font-size: 4rem;
+    }
+
+    .colours, .sports, .animals, .foods {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    
+    .avatarbox {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    #avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    #name-heading {
+        font-size: 3rem;
+    }
+
+    .metric-number {
+        font-size: 3rem;
+    }
+
+    .colours, .sports, .animals, .foods {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    
+    .avatarbox {
+        grid-template-columns: 1fr 1fr;
+    }
 }

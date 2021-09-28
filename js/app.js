@@ -304,9 +304,14 @@ const buildPage = () => {
       });
 };
 
+
+const noScroll = () => {
+    window.scrollTo(0, 0);
+  }
+
 // what happens
 const clickAction = e => {
-    
+    console.log(e.target);
 
     // execute if it's an image with an alt
     if (e.target.alt !== undefined && e.target.alt !== '') {
@@ -339,24 +344,29 @@ const clickAction = e => {
     }
 
     // if the target is the avatar
-    if (e.target.id === 'avatars') {
+    if (e.target.id === 'avatars' || e.target.id === 'noradius') {
+        // add listener to disable scroll
+        window.addEventListener('scroll', noScroll);
         toggleLightBox();
         return;
     }
 
     // if the close button is pressed
     if (e.target.classList[0] === 'close') {
+        // Remove listener to re-enable scroll
+        window.removeEventListener('scroll', noScroll);
         toggleLightBox();
         return;
     }
 
     // if an avatar is chosen
     if (e.target.classList[0] === 'js-avatar') {
+        // Remove listener to re-enable scroll
+        window.removeEventListener('scroll', noScroll);
         profile['avatar'] = e.target.src;
         avatarClicked = true;
         checkClicked();
         avatars.src = e.target.src;
-        avatars.id = 'noradius';
         toggleLightBox();
         return;
     }
