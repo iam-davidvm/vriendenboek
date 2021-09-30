@@ -402,8 +402,6 @@ const clickAction = e => {
             likeCountSpan.innerText = parseInt(likeCountSpan.innerText) + 1;
         }
     }
-
-    
 };
 
 // create global eventlistener
