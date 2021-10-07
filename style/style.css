@@ -204,7 +204,7 @@ input, textarea, select, option {
     height: 80%;
     max-width: 400px;
     max-height: 500px;
-    margin: 10px auto;
+    margin: 20px auto;
     background-color: white;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -446,6 +446,9 @@ section {
 }
 
 @media (max-width: 576px) {
+    #form {
+        padding: 30px;
+    }
     #avatar {
         width: 80px;
         height: 80px;
@@ -464,9 +467,5 @@ section {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
-    }
-    
-    .avatarbox {
-        grid-template-columns: 1fr 1fr;
     }
 }
